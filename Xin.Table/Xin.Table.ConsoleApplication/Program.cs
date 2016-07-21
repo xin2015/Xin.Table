@@ -36,9 +36,9 @@ namespace Xin.Table.ConsoleApplication
             tr = table.Thead.AddTr();
             for (int i = 0; i < 7; i++)
             {
-                if (i == 3) tr.AddTh("浓度/（mg/m³）", 1, 1);
-                else tr.AddTh("浓度/（μg/m³）", 1, 1);
-                tr.AddTh("分指数", 1, 1);
+                if (i == 3) tr.AddTh("浓度/（mg/m³）");
+                else tr.AddTh("浓度/（μg/m³）");
+                tr.AddTh("分指数");
             }
             #endregion
             #region tfoot
