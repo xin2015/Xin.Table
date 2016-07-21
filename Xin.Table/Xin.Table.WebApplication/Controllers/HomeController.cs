@@ -62,7 +62,7 @@ namespace Xin.Table.WebApplication.Controllers
             #endregion
             #region tfoot
             tr = table.Tfoot.AddTr();
-            tr.AddTd("注：缺测指标的浓度及分指数均使用NA标识。");
+            tr.AddTd("注：缺测指标的浓度及分指数均使用NA标识。", 1, 21);
             #endregion
             #region tbody
             Random rand = new Random();
