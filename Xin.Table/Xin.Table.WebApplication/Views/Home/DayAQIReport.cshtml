@@ -1,0 +1,72 @@
+﻿@model Xin.Table.Table
+@{
+    ViewBag.Title = "DayAQIReport";
+}
+
+<button id="export">Export Excel</button>
+<table class="table table-bordered table-hover table-responsive table-striped">
+    <caption>空气质量指数日报</caption>
+    <thead>
+        @foreach (var tr in Model.Thead.Rows)
+        {
+            <tr>
+                @foreach (var th in tr.Cells)
+                {
+                    if (th.Rowspan > 1 || th.Colspan > 1)
+                    {
+                        <th rowspan="@th.Rowspan" colspan="@th.Colspan">@th.Value</th>
+                    }
+                    else
+                    {
+                        <th>@th.Value</th>
+                    }
+                }
+            </tr>
+        }
+    </thead>
+    <tfoot>
+        @foreach (var tr in Model.Tfoot.Rows)
+        {
+            <tr>
+                @foreach (var td in tr.Cells)
+                {
+                    if (td.Rowspan > 1 || td.Colspan > 1)
+                    {
+                        <td rowspan="@td.Rowspan" colspan="@td.Colspan">@td.Value</td>
+                    }
+                    else
+                    {
+                        <td>@td.Value</td>
+                    }
+                }
+            </tr>
+        }
+    </tfoot>
+    <tbody>
+        @foreach (var tr in Model.Tbody.Rows)
+        {
+            <tr>
+                @foreach (var td in tr.Cells)
+                {
+                    if (td.Rowspan > 1 || td.Colspan > 1)
+                    {
+                        <td rowspan="@td.Rowspan" colspan="@td.Colspan">@td.Value</td>
+                    }
+                    else
+                    {
+                        <td>@td.Value</td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#export").click(function () {
+                location.href = "/Home/ExportDayAQIReport?count=5000";
+            });
+        });
+    </script>
+}

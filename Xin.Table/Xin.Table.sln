@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xin.Table", "Xin.Table\Xin.Table.csproj", "{F1C8D2BF-8F62-4977-8FA6-1713DAC5128F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{EC310114-38F9-4128-8954-B3AB634DB054}"
+	ProjectSection(SolutionItems) = preProject
+		lib\ICSharpCode.SharpZipLib.dll = lib\ICSharpCode.SharpZipLib.dll
+		lib\NPOI.dll = lib\NPOI.dll
+		lib\NPOI.OOXML.dll = lib\NPOI.OOXML.dll
+		lib\NPOI.OpenXml4Net.dll = lib\NPOI.OpenXml4Net.dll
+		lib\NPOI.OpenXmlFormats.dll = lib\NPOI.OpenXmlFormats.dll
+		lib\NPOI.XML = lib\NPOI.XML
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xin.Table.ConsoleApplication", "Xin.Table.ConsoleApplication\Xin.Table.ConsoleApplication.csproj", "{8E0F1AA6-CB74-414F-A32E-3F509A4CD718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xin.Table.WebApplication", "Xin.Table.WebApplication\Xin.Table.WebApplication.csproj", "{5E26221A-F55B-4B92-BA00-766F69322672}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1C8D2BF-8F62-4977-8FA6-1713DAC5128F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C8D2BF-8F62-4977-8FA6-1713DAC5128F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C8D2BF-8F62-4977-8FA6-1713DAC5128F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C8D2BF-8F62-4977-8FA6-1713DAC5128F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E0F1AA6-CB74-414F-A32E-3F509A4CD718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E0F1AA6-CB74-414F-A32E-3F509A4CD718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E0F1AA6-CB74-414F-A32E-3F509A4CD718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E0F1AA6-CB74-414F-A32E-3F509A4CD718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E26221A-F55B-4B92-BA00-766F69322672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E26221A-F55B-4B92-BA00-766F69322672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E26221A-F55B-4B92-BA00-766F69322672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E26221A-F55B-4B92-BA00-766F69322672}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
