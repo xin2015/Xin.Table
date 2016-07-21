@@ -30,6 +30,7 @@ namespace Xin.Table.WebApplication.Controllers
         public ActionResult DayAQIReport()
         {
             Table table = new Table();
+            #region thead
             TRow tr = table.Thead.AddTr();
             tr.AddTh(DateTime.Today.ToString("yyyy年MM月dd日"), 1, 21);
             tr = table.Thead.AddTr();
@@ -58,10 +59,14 @@ namespace Xin.Table.WebApplication.Controllers
                 else tr.AddTh("浓度/（μg/m³）");
                 tr.AddTh("分指数");
             }
+            #endregion
+            #region tfoot
             tr = table.Tfoot.AddTr();
-            tr.AddTd("注：缺测指标的浓度及分指数均使用NA标识。", 1, 21);
+            tr.AddTd("注：缺测指标的浓度及分指数均使用NA标识。");
+            #endregion
+            #region tbody
             Random rand = new Random();
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 tr = table.Tbody.AddTr();
                 tr.AddTd("广州");
@@ -86,6 +91,7 @@ namespace Xin.Table.WebApplication.Controllers
                 tr.AddTd("优");
                 tr.AddTd("绿色");
             }
+            #endregion
             ViewData.Model = table;
             return View();
         }
@@ -93,6 +99,7 @@ namespace Xin.Table.WebApplication.Controllers
         public FileResult ExportDayAQIReport(int count)
         {
             Table table = new Table();
+            #region thead
             TRow tr = table.Thead.AddTr();
             tr.AddTh(DateTime.Today.ToString("yyyy年MM月dd日"), 1, 21);
             tr = table.Thead.AddTr();
@@ -121,8 +128,12 @@ namespace Xin.Table.WebApplication.Controllers
                 else tr.AddTh("浓度/（μg/m³）");
                 tr.AddTh("分指数");
             }
+            #endregion
+            #region tfoot
             tr = table.Tfoot.AddTr();
             tr.AddTd("注：缺测指标的浓度及分指数均使用NA标识。");
+            #endregion
+            #region tbody
             Random rand = new Random();
             for (int i = 0; i < count; i++)
             {
@@ -149,6 +160,7 @@ namespace Xin.Table.WebApplication.Controllers
                 tr.AddTd("优");
                 tr.AddTd("绿色");
             }
+            #endregion
             return File(NPOIHelper.Export(table, 2).ToArray(), "application / vnd.ms - excel", "空气质量指数日报.xlsx");
         }
     }

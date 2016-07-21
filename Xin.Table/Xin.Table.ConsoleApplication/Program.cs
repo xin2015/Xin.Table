@@ -11,6 +11,7 @@ namespace Xin.Table.ConsoleApplication
         static void Main(string[] args)
         {
             Table table = new Table();
+            #region thead
             TRow tr = table.Thead.AddTr();
             tr.AddTh(DateTime.Today.ToString("yyyy年MM月dd日"), 1, 21);
             tr = table.Thead.AddTr();
@@ -39,8 +40,12 @@ namespace Xin.Table.ConsoleApplication
                 else tr.AddTh("浓度/（μg/m³）", 1, 1);
                 tr.AddTh("分指数", 1, 1);
             }
+            #endregion
+            #region tfoot
             tr = table.Tfoot.AddTr();
             tr.AddTd("注：缺测指标的浓度及分指数均使用NA标识。");
+            #endregion
+            #region tbody
             Random rand = new Random();
             for (int i = 0; i < 10; i++)
             {
@@ -67,6 +72,7 @@ namespace Xin.Table.ConsoleApplication
                 tr.AddTd("优");
                 tr.AddTd("绿色");
             }
+            #endregion
             NPOIHelper.Export(table, "DayAQIReport.xlsx", 2);
         }
     }
