@@ -59,7 +59,7 @@ namespace Xin.Table.WebApplication.Controllers
                 tr.AddTh("分指数");
             }
             tr = table.Tfoot.AddTr();
-            tr.AddTd("注：缺测指标的浓度及分指数均使用NA标识。");
+            tr.AddTd("注：缺测指标的浓度及分指数均使用NA标识。", 1, 21);
             Random rand = new Random();
             for(int i = 0; i < 10; i++)
             {

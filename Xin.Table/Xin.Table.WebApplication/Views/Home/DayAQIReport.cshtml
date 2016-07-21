@@ -1,4 +1,4 @@
-﻿@model Xin.Table.Table
+﻿@model Table
 @{
     ViewBag.Title = "DayAQIReport";
 }
@@ -10,15 +10,15 @@
         @foreach (var tr in Model.Thead.Rows)
         {
             <tr>
-                @foreach (var th in tr.Cells)
+                @foreach (var cell in tr.Cells)
                 {
-                    if (th.Rowspan > 1 || th.Colspan > 1)
+                    if(cell is Th)
                     {
-                        <th rowspan="@th.Rowspan" colspan="@th.Colspan">@th.Value</th>
+                        <th @(cell.Class==null?string.Empty:string.Format("class={0}",cell.Class)) @(cell.Rowspan>1?string.Format("rowspan={0}",cell.Rowspan):string.Empty) @(cell.Colspan>1?string.Format("colspan={0}",cell.Colspan):string.Empty)>@cell.Value</th>
                     }
                     else
                     {
-                        <th>@th.Value</th>
+                        <td @(cell.Class == null ? string.Empty : string.Format("class={0}", cell.Class)) @(cell.Rowspan > 1 ? string.Format("rowspan={0}", cell.Rowspan) : string.Empty) @(cell.Colspan > 1 ? string.Format("colspan={0}", cell.Colspan) : string.Empty)>@cell.Value</td>
                     }
                 }
             </tr>
@@ -28,15 +28,15 @@
         @foreach (var tr in Model.Tfoot.Rows)
         {
             <tr>
-                @foreach (var td in tr.Cells)
+                @foreach (var cell in tr.Cells)
                 {
-                    if (td.Rowspan > 1 || td.Colspan > 1)
+                    if (cell is Th)
                     {
-                        <td rowspan="@td.Rowspan" colspan="@td.Colspan">@td.Value</td>
+                        <th @(cell.Class == null ? string.Empty : string.Format("class={0}", cell.Class)) @(cell.Rowspan > 1 ? string.Format("rowspan={0}", cell.Rowspan) : string.Empty) @(cell.Colspan > 1 ? string.Format("colspan={0}", cell.Colspan) : string.Empty)>@cell.Value</th>
                     }
                     else
                     {
-                        <td>@td.Value</td>
+                        <td @(cell.Class == null ? string.Empty : string.Format("class={0}", cell.Class)) @(cell.Rowspan > 1 ? string.Format("rowspan={0}", cell.Rowspan) : string.Empty) @(cell.Colspan > 1 ? string.Format("colspan={0}", cell.Colspan) : string.Empty)>@cell.Value</td>
                     }
                 }
             </tr>
@@ -46,15 +46,15 @@
         @foreach (var tr in Model.Tbody.Rows)
         {
             <tr>
-                @foreach (var td in tr.Cells)
+                @foreach (var cell in tr.Cells)
                 {
-                    if (td.Rowspan > 1 || td.Colspan > 1)
+                    if (cell is Th)
                     {
-                        <td rowspan="@td.Rowspan" colspan="@td.Colspan">@td.Value</td>
+                        <th @(cell.Class == null ? string.Empty : string.Format("class={0}", cell.Class)) @(cell.Rowspan > 1 ? string.Format("rowspan={0}", cell.Rowspan) : string.Empty) @(cell.Colspan > 1 ? string.Format("colspan={0}", cell.Colspan) : string.Empty)>@cell.Value</th>
                     }
                     else
                     {
-                        <td>@td.Value</td>
+                        <td @(cell.Class == null ? string.Empty : string.Format("class={0}", cell.Class)) @(cell.Rowspan > 1 ? string.Format("rowspan={0}", cell.Rowspan) : string.Empty) @(cell.Colspan > 1 ? string.Format("colspan={0}", cell.Colspan) : string.Empty)>@cell.Value</td>
                     }
                 }
             </tr>
