@@ -41,10 +41,10 @@ namespace Xin.Table
             thStyle.SetFont(thFont);
             #endregion
             #region 填充thead
-            foreach (TRow tr in table.Thead.Rows)
+            foreach (TRow tr in table.Thead)
             {
                 IRow row = sheet.CreateRow(tr.Index);
-                foreach (TCell th in tr.Cells)
+                foreach (TCell th in tr)
                 {
                     ICell cell = row.CreateCell(th.Index);
                     cell.SetCellValue(th.Value);
@@ -58,11 +58,11 @@ namespace Xin.Table
             #endregion
             #region 填充tbody
             int rowNum = table.Thead.Rows.Count;
-            foreach (TRow tr in table.Tbody.Rows)
+            foreach (TRow tr in table.Tbody)
             {
                 tr.Index += rowNum;
                 IRow row = sheet.CreateRow(tr.Index);
-                foreach (TCell td in tr.Cells)
+                foreach (TCell td in tr)
                 {
                     ICell cell = row.CreateCell(td.Index);
                     cell.SetCellValue(td.Value);
@@ -76,11 +76,11 @@ namespace Xin.Table
             #endregion
             #region 填充tfoot
             rowNum += table.Tbody.Rows.Count;
-            foreach (TRow tr in table.Tfoot.Rows)
+            foreach (TRow tr in table.Tfoot)
             {
                 tr.Index += rowNum;
                 IRow row = sheet.CreateRow(tr.Index);
-                foreach (TCell td in tr.Cells)
+                foreach (TCell td in tr)
                 {
                     ICell cell = row.CreateCell(td.Index);
                     cell.SetCellValue(td.Value);
@@ -161,10 +161,10 @@ namespace Xin.Table
             thStyle.SetFont(thFont);
             #endregion
             #region 填充thead
-            foreach (TRow tr in table.Thead.Rows)
+            foreach (TRow tr in table.Thead)
             {
                 IRow row = sheet.CreateRow(tr.Index);
-                foreach (TCell th in tr.Cells)
+                foreach (TCell th in tr)
                 {
                     ICell cell = row.CreateCell(th.Index);
                     cell.SetCellValue(th.Value);
@@ -178,11 +178,11 @@ namespace Xin.Table
             #endregion
             #region 填充tbody
             int rowNum = table.Thead.Rows.Count;
-            foreach (TRow tr in table.Tbody.Rows)
+            foreach (TRow tr in table.Tbody)
             {
                 tr.Index += rowNum;
                 IRow row = sheet.CreateRow(tr.Index);
-                foreach (TCell td in tr.Cells)
+                foreach (TCell td in tr)
                 {
                     ICell cell = row.CreateCell(td.Index);
                     cell.SetCellValue(td.Value);
@@ -196,11 +196,11 @@ namespace Xin.Table
             #endregion
             #region 填充tfoot
             rowNum += table.Tbody.Rows.Count;
-            foreach (TRow tr in table.Tfoot.Rows)
+            foreach (TRow tr in table.Tfoot)
             {
                 tr.Index += rowNum;
                 IRow row = sheet.CreateRow(tr.Index);
-                foreach (TCell td in tr.Cells)
+                foreach (TCell td in tr)
                 {
                     ICell cell = row.CreateCell(td.Index);
                     cell.SetCellValue(td.Value);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Xin.Table
     /// <summary>
     /// thead/tbody/tfoot
     /// </summary>
-    public class TPart
+    public class TPart: IEnumerable<TRow>
     {
         /// <summary>
         /// 单元格填充状态
@@ -104,6 +105,24 @@ namespace Xin.Table
                 if (full) index = status.Count;
             }
             return index;
+        }
+
+        /// <summary>
+        /// 返回一个循环访问集合的枚举器
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerator<TRow> GetEnumerator()
+        {
+            return Rows.GetEnumerator();
+        }
+
+        /// <summary>
+        /// 返回一个循环访问集合的枚举器
+        /// </summary>
+        /// <returns></returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return Rows.GetEnumerator();
         }
     }
 }

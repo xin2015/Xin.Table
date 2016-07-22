@@ -7,10 +7,10 @@
 <table class="table table-bordered table-hover table-responsive table-striped">
     <caption>空气质量指数日报</caption>
     <thead>
-        @foreach (var tr in Model.Thead.Rows)
+        @foreach (var tr in Model.Thead)
         {
             <tr>
-                @foreach (var cell in tr.Cells)
+                @foreach (var cell in tr)
                 {
                     if(cell is Th)
                     {
@@ -25,10 +25,10 @@
         }
     </thead>
     <tfoot>
-        @foreach (var tr in Model.Tfoot.Rows)
+        @foreach (var tr in Model.Tfoot)
         {
             <tr>
-                @foreach (var cell in tr.Cells)
+                @foreach (var cell in tr)
                 {
                     if (cell is Th)
                     {
@@ -43,10 +43,10 @@
         }
     </tfoot>
     <tbody>
-        @foreach (var tr in Model.Tbody.Rows)
+        @foreach (var tr in Model.Tbody)
         {
             <tr>
-                @foreach (var cell in tr.Cells)
+                @foreach (var cell in tr)
                 {
                     if (cell is Th)
                     {
@@ -67,6 +67,9 @@
             $("#export").click(function () {
                 location.href = "/Home/ExportDayAQIReport?count=5000";
             });
+            var codes = "1001A,1002A,1003A,1004A";
+            codes = codes.split(',').slice(0, 3).join(',');
+            console.log(codes);
         });
     </script>
 }

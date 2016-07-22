@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Xin.Table
     /// <summary>
     /// tr
     /// </summary>
-    public class TRow
+    public class TRow: IEnumerable<TCell>
     {
         /// <summary>
         /// 单元格集合
@@ -76,6 +77,24 @@ namespace Xin.Table
             Cells.Add(td);
             Part.Fill(Index, td.Index, td.Rowspan, td.Colspan);
             return td;
+        }
+
+        /// <summary>
+        /// 返回一个循环访问集合的枚举器
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerator<TCell> GetEnumerator()
+        {
+            return Cells.GetEnumerator();
+        }
+
+        /// <summary>
+        /// 返回一个循环访问集合的枚举器
+        /// </summary>
+        /// <returns></returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return Cells.GetEnumerator();
         }
     }
 }
